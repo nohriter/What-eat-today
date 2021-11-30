@@ -18,7 +18,7 @@ public class View extends JFrame {
         Icon distanceAllBasic = new ImageIcon("image/basic_all_btn.jpg");
         Icon distanceAllHover = new ImageIcon("image/hover_all_btn.jpg");
         Icon distanceAllSelected = new ImageIcon("image/selected_all_btn.jpg");
-        distanceButtons[0] = new JRadioButton(Distance.All.value(), distanceAllBasic);
+        distanceButtons[0] = new JRadioButton(Distance.All.value(), distanceAllBasic, true);
         distanceButtons[0].setRolloverIcon(distanceAllHover); // 마우스 올리기
         distanceButtons[0].setSelectedIcon(distanceAllSelected); // 마우스 올리기
         distanceButtons[0].setLocation(20, 31);
@@ -69,7 +69,7 @@ public class View extends JFrame {
         Icon foodAllBasic = new ImageIcon("image/food_basic_all_btn.jpg");
         Icon foodAllHover = new ImageIcon("image/food_hover_all_btn.jpg");
         Icon foodAllSelected = new ImageIcon("image/food_selected_all_btn.jpg");
-        foodButtons[0] = new JRadioButton(FoodCategory.ALL.value(), foodAllBasic);
+        foodButtons[0] = new JRadioButton(FoodCategory.ALL.value(), foodAllBasic, true);
         foodButtons[0].setRolloverIcon(foodAllHover); // 마우스 올리기
         foodButtons[0].setSelectedIcon(foodAllSelected); // 마우스 올리기
         foodButtons[0].setLocation(20, 100);
