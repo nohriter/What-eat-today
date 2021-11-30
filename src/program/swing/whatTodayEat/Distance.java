@@ -1,10 +1,10 @@
 package program.swing.whatTodayEat;
 
 public enum Distance {
-    All("전체"),
-    THREE_HUNDRED("300m"),
-    FIVE_HUNDRED("500m"),
-    ONE_KILOMETER("1km");
+    All("9999"),
+    THREE_HUNDRED("300"),
+    FIVE_HUNDRED("500"),
+    ONE_KILOMETER("1000");
 
     private final String distance;
 
