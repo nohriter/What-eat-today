@@ -1,5 +1,9 @@
+package program.swing.whatTodayEat;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class View extends JFrame {
 
@@ -136,8 +140,14 @@ public class View extends JFrame {
         randomBasicButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
         contentPane.add(randomBasicButton);
 
-        setTitle("What eat Today");
+        randomBasicButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
 
+            }
+        });
+
+        setTitle("What eat Today");
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(544, 600);

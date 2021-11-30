@@ -1,3 +1,5 @@
+package program.swing.whatTodayEat;
+
 public class Restaurant {
     private Integer id;
     private String name;
