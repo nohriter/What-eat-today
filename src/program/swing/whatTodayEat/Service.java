@@ -1,5 +1,8 @@
 package program.swing.whatTodayEat;
 
+import program.swing.whatTodayEat.buttonEnum.Distance;
+import program.swing.whatTodayEat.buttonEnum.FoodCategory;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
