@@ -1,9 +1,9 @@
 package program.swing.whatTodayEat;
 
 public class Controller {
-    private Service model = new Service();
+    private Model model = new Model();
 
-    public Restaurant getRestaurant(String distance, String foodCategory) {
+    public RestaurantDTO getRestaurant(String distance, String foodCategory) {
         return model.getRestaurant(distance, foodCategory);
     }
 }

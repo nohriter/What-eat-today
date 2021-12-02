@@ -8,11 +8,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-public class Service {
-    private RestaurantData restaurantData = new RestaurantData();
-    private Map<Integer, Restaurant> restaurants = restaurantData.getAllRestaurants();
+public class Model {
+    private final RestaurantData restaurantData = new RestaurantData();
+    private final Map<Integer, Restaurant> restaurants = restaurantData.getAllRestaurants();
 
-    public Restaurant getRestaurant(String distance, String foodCategory) {
+    public RestaurantDTO getRestaurant(String distance, String foodCategory) {
         List<Restaurant> restaurantList = new ArrayList<>(restaurants.values());
 
         Collections.shuffle(restaurantList);
@@ -20,7 +20,10 @@ public class Service {
         List<Restaurant> tempList = new ArrayList<>();
 
         if (distance.equals(Distance.All.value()) && foodCategory.equals(FoodCategory.ALL.value())) {
-            return restaurantList.get(0);
+
+            Restaurant restaurant = restaurantList.get(0);
+
+            return new RestaurantDTO(restaurant.getName(), restaurant.getDistance(), restaurant.getCategory());
         }
 
         if (foodCategory.equals(FoodCategory.ALL.value())) {
@@ -30,7 +33,9 @@ public class Service {
                 }
             }
 
-            return tempList.get(0);
+            Restaurant restaurant = tempList.get(0);
+
+            return new RestaurantDTO(restaurant.getName(), restaurant.getDistance(), restaurant.getCategory());
         }
 
         if (distance.equals(Distance.All.value())) {
@@ -40,7 +45,9 @@ public class Service {
                 }
             }
 
-            return tempList.get(0);
+            Restaurant restaurant = tempList.get(0);
+
+            return new RestaurantDTO(restaurant.getName(), restaurant.getDistance(), restaurant.getCategory());
         }
 
         for (Restaurant restaurant : restaurantList) {
@@ -51,6 +58,8 @@ public class Service {
             }
         }
 
-        return tempList.get(0);
+        Restaurant restaurant = tempList.get(0);
+
+        return new RestaurantDTO(restaurant.getName(), restaurant.getDistance(), restaurant.getCategory());
     }
 }

@@ -20,7 +20,7 @@ public class View extends JFrame {
     private static final int FRAME_WIDTH = 544;
     private static final int FRAME_HEIGHT = 600;
 
-    private Controller controller = new Controller();
+    private final Controller controller = new Controller();
 
     public View() {
         buttonSetting();
@@ -168,7 +168,7 @@ public class View extends JFrame {
                 String selectedDistance = whatIsSelected(distanceGroup);
                 String selectedFood = whatIsSelected(foodGroup);
 
-                Restaurant restaurant = controller.getRestaurant(selectedDistance, selectedFood);
+                RestaurantDTO restaurant = controller.getRestaurant(selectedDistance, selectedFood);
 
                 jLabel.setText(restaurant.getName());
             }

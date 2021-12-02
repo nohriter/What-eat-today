@@ -1,27 +1,18 @@
 package program.swing.whatTodayEat;
 
-public class Restaurant {
-    private Integer id;
+public class RestaurantDTO {
     private final String name;
     private final int distance;
     private final String category;
 
-    public Restaurant(Integer id, String name, int distance, String category) {
-        this.id = id;
+    public RestaurantDTO(String name, int distance, String category) {
         this.name = name;
         this.distance = distance;
         this.category = category;
     }
 
-    public int getDistance() {
-        return distance;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
     public String getName() {
         return name;
     }
+
 }

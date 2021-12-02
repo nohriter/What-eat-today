@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class RestaurantData {
     private Integer id = 0;
-    private Map<Integer, Restaurant> restaurants = new HashMap<>();
+    private final Map<Integer, Restaurant> restaurants = new HashMap<>();
 
     public RestaurantData() {
         restaurants.put(generatedId(), new Restaurant(id,"고가네철판불백",300,"한식"));
@@ -65,7 +65,6 @@ public class RestaurantData {
         restaurants.put(generatedId(), new Restaurant(id,"소호정(국수)",1000,"한식"));
         restaurants.put(generatedId(), new Restaurant(id,"짚신매운갈비",1000,"한식"));
 
-
         restaurants.put(generatedId(), new Restaurant(id,"아오리의행방불명(라멘)",300,"일식"));
         restaurants.put(generatedId(), new Restaurant(id,"스밋코(덮밥)",300,"일식"));
         restaurants.put(generatedId(), new Restaurant(id,"교토일식(회)",300,"일식"));
@@ -114,8 +113,6 @@ public class RestaurantData {
         restaurants.put(generatedId(), new Restaurant(id,"라이라이",300,"중식"));
         restaurants.put(generatedId(), new Restaurant(id,"홍리마라탕",1000,"중식"));
         restaurants.put(generatedId(), new Restaurant(id,"중경마라탕",1000,"중식"));
-
-
     }
 
     private Integer generatedId() {
