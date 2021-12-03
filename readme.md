@@ -23,4 +23,6 @@
 
 #### 프로그램
 
+![이미지](image/what-eat-today.jpg)
+
 ![이미지](image/what-eat-today.gif)
