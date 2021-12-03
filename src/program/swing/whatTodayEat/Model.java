@@ -12,7 +12,10 @@ public class Model {
     private final RestaurantData restaurantData = new RestaurantData();
     private final Map<Integer, Restaurant> restaurants = restaurantData.getAllRestaurants();
 
-    public RestaurantDTO getRestaurant(String distance, String foodCategory) {
+    public ResponseDTO getRestaurant(RequestDTO requestDTO) {
+        String distance = requestDTO.getSelectedDistance();
+        String foodCategory = requestDTO.getSelectedFood();
+
         List<Restaurant> restaurantList = new ArrayList<>(restaurants.values());
 
         Collections.shuffle(restaurantList);
@@ -23,7 +26,7 @@ public class Model {
 
             Restaurant restaurant = restaurantList.get(0);
 
-            return new RestaurantDTO(restaurant.getName(), restaurant.getDistance(), restaurant.getCategory());
+            return new ResponseDTO(restaurant.getName(), restaurant.getDistance(), restaurant.getCategory());
         }
 
         if (foodCategory.equals(FoodCategory.ALL.value())) {
@@ -35,7 +38,7 @@ public class Model {
 
             Restaurant restaurant = tempList.get(0);
 
-            return new RestaurantDTO(restaurant.getName(), restaurant.getDistance(), restaurant.getCategory());
+            return new ResponseDTO(restaurant.getName(), restaurant.getDistance(), restaurant.getCategory());
         }
 
         if (distance.equals(Distance.All.value())) {
@@ -47,7 +50,7 @@ public class Model {
 
             Restaurant restaurant = tempList.get(0);
 
-            return new RestaurantDTO(restaurant.getName(), restaurant.getDistance(), restaurant.getCategory());
+            return new ResponseDTO(restaurant.getName(), restaurant.getDistance(), restaurant.getCategory());
         }
 
         for (Restaurant restaurant : restaurantList) {
@@ -60,6 +63,6 @@ public class Model {
 
         Restaurant restaurant = tempList.get(0);
 
-        return new RestaurantDTO(restaurant.getName(), restaurant.getDistance(), restaurant.getCategory());
+        return new ResponseDTO(restaurant.getName(), restaurant.getDistance(), restaurant.getCategory());
     }
 }

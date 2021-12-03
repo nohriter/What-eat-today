@@ -168,9 +168,9 @@ public class View extends JFrame {
                 String selectedDistance = whatIsSelected(distanceGroup);
                 String selectedFood = whatIsSelected(foodGroup);
 
-                RestaurantDTO restaurant = controller.getRestaurant(selectedDistance, selectedFood);
+                ResponseDTO restaurantDTO = controller.getRestaurant(new RequestDTO(selectedDistance, selectedFood));
 
-                jLabel.setText(restaurant.getName());
+                jLabel.setText(restaurantDTO.getName());
             }
         });
     }
