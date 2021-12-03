@@ -26,3 +26,6 @@
 ![이미지](image/what-eat-today.jpg)
 
 ![이미지](image/what-eat-today.gif)
+
+#### 클래스 다이어그램
+![이미지](image/class%20diagram.jpg)
